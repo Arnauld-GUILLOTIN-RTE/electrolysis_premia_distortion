@@ -3,8 +3,10 @@
 .RData
 .Ruserdata
 .Renviron
-data/simulations/
-data/temp/
+data/simulations/*
+!data/simulations/.gitkeep
+data/temp/*
+!data/temp/.gitkeep
 renv/library/
 renv/local/
 renv/cellar/

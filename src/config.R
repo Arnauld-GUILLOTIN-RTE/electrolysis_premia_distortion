@@ -1,3 +1,16 @@
+# Copyright (c) 2026, RTE (https://www.rte-france.com)
+# 
+# Authors: 
+#      Arnauld  GUILLOTIN (author)
+#      Thomas HEGGARTY (author)
+# 
+# SPDX-License-Identifier: MIT
+# 
+# This file is part of the project electrolysis_prema_distortion, containing code that supports an academic
+# paper and enables reproduction of paper figures.
+
+####################################################################################################
+
 ### Geographic parameters for data processing
 POWER_AREAS <- c("at00", "be00", "beof", "ch00", "cz00", "de00", "dekf", "dkbh", "dke1", "dkkf",
                 "dkns", "dkw1", "es00", "fi00", "fr00", "ie00", "itca", "itcn", "itcs", "itn1",

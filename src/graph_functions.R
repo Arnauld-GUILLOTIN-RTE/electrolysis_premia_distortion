@@ -1,3 +1,16 @@
+# Copyright (c) 2026, RTE (https://www.rte-france.com)
+# 
+# Authors: 
+#      Arnauld  GUILLOTIN (author)
+#      Thomas HEGGARTY (author)
+# 
+# SPDX-License-Identifier: MIT
+# 
+# This file is part of the project electrolysis_prema_distortion, containing code that supports an academic
+# paper and enables reproduction of paper figures.
+
+####################################################################################################
+
 # Libs
 {
   library(antaresRead)

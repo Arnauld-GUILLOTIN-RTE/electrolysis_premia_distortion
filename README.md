@@ -1,32 +1,47 @@
 # electrolysis_premia_distortion
 
-This project supports a submitted paper, allowing reproduction of all this paper's figures. It processes output data from a set of [Antares Simulator](https://antares-simulator.org/) outputs which are available for download on this Zenodo record. This project is solely intended to reproduce figures of said data.
+This project supports a submitted paper, allowing reproduction of all this paper's figures. 
+It processes output data from a set of [Antares Simulator](https://antares-simulator.org/) outputs which are available for download on this Zenodo record. 
 
+This project is solely intended to reproduce figures of said data provided code execution complying with instructions below.
+
+
+
+- [Reproduction & Execution](#reproduction-execution)
+  - [Prerequisites](#prerequisites)
+  - [Reproduce figures](#reproduce-figures)
+  - [Memory Requirements](#memory-requirements)
+- [Project Structure & Data Flow](#project-structure--data-flow)
+- [Main Analysis Workflow (`main.R`)](#main-analysis-workflow-main-r)
+  - [1. Environment Setup](#1-environment-setup)
+  - [2. Antares Simulation Path Configuration](#2-antares-simulation-path-configuration)
+  - [3. Figure Generation](#3-figure-generation)
+  - [4. Storing output figures](#4-storing-output-figures)
 
 ---
 
-## Reproduction & Execution
+## <a name="reproduction-execution"></a>Reproduction & Execution
 
-### Prerequisites
+### <a name="prerequisites"></a><a name="prerequisites"></a>Prerequisites
 - R version 4.4.2 (as used in paper reproduction)
 - `renv` managed environment with all dependencies (run `renv::restore()` in `main.R`). The `renv.lock` file and `renv` folder of the repository ensure packages used match those with which the code runs as intended
 - Unzipped Antares simulation folders, at the root of `data/simulations/` (download from associated Zenodo record). The structure of the folder should be, for a given simulation, e.g., `data/simulations/NT2040_0/`
 - Note: Input parameters in `data/input/` and `src/config.R` match model inputs and should not be changed to reproduce paper figures
 
-### Reproduce figures
+### <a name="reproduce-figures"></a>Reproduce figures
 1. In Git bash: `git clone https://github.com/Arnauld-GUILLOTIN-RTE/electrolysis_premia_distortion.git`
 2. Open `electrolysis_premia_distortion.Rproj` in RStudio
 3. Run `main.R`, ensuring that environment restoration from `renv::restore()` worked correctly (it can take quite a while if it necessitates a large number of package downloads) and all data linking to simulation outputs works
 4. Outputs automatically generated in `data/output/` as `.png` and `.xlsx` files and the Viewer panel
 
 
-### Memory Requirements
+### <a name="memory-requirements"></a>Memory Requirements
 - Full simulation data loading can exceed available RAM
 - Intermediate `.rds` files (cached in `data/temp/`) can be used to avoid the most RAM-demanding step of the processing (Fig. 5a-b and 6)
 
 ---
 
-## Project Structure & Data Flow
+## <a name="project-structure--data-flow"></a>Project Structure & Data Flow
 
 ```
 data/
@@ -48,14 +63,14 @@ src/
 
 ---
 
-## Main Analysis Workflow (`main.R`)
+## <a name="main-analysis-workflow-main-r"></a>Main Analysis Workflow (`main.R`)
 
-### 1. Environment Setup
+### <a name="1-environment-setup"></a><a name="1-environment-setup"></a>1. Environment Setup
 - Restores R package environment via `renv::restore()` (ensures reproducibility)
 - Sources configuration and utility functions
 - Initializes paths for simulations, outputs, temporary files, and input data
 
-### 2. Antares Simulation Path Configuration
+### <a name="2-antares-simulation-path-configuration"></a>2. Antares Simulation Path Configuration
 Creates a list of Antares simulation objects (`opts_list`) for each premium level:
 ```
 opts_list$pr0 → NT2040_0 most recent output
@@ -65,7 +80,7 @@ opts_list$pr3 → NT2040_3 most recent output
 ```
 These objects enable reading full simulation data (dispatch, prices, flows) via `antaresRead` package functions.
 
-### 3. Figure Generation
+### <a name="3-figure-generation"></a>3. Figure Generation
 
 | Figure | Function | Output Type | Description |
 |--------|----------|-------------|-------------|
@@ -83,7 +98,7 @@ These objects enable reading full simulation data (dispatch, prices, flows) via 
 | Appendix Fig. B.9 | `price_gap_plot()` | PNG | Price gap visualization |
 | Appendix Fig. C.10a–c | | PNG | Equivalent to Fig. 7a–c, repeated using sensitivity scenario data |
 
-### 4. Storing output figures
+### <a name="4-storing-output-figures"></a>4. Storing output figures
 
 **Output Organization**:
 - Figures saved as `.png` in `data/output/`

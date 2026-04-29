@@ -5,9 +5,6 @@
 .Renviron
 data/simulations/*
 !data/simulations/.gitkeep
-data/temp/*
-!data/temp/.gitkeep
-!data/temp/temp_simdata_pr0.rds
 renv/library/
 renv/local/
 renv/cellar/

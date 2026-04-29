@@ -36,7 +36,7 @@ data/
 ├── output/             # Generated figures and summary files (.png, .xlsx)
 ├── simulations/        # Antares simulation folders (whole study) 
 │   ├── NT2040_0/
-│   ├── NT2040_0/
+│   ├── NT2040_1/
 │   └── ...
 └── temp/               # Intermediate processed data files (.rds)
 

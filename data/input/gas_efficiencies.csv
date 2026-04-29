@@ -1,0 +1,13 @@
+antares_name;efficiency
+gas_conventional old 1;0,36
+gas_conventional old 2;0,41
+gas_ccgt old 1;0,4
+gas_ccgt old 2;0,48
+gas_ccgt present 1;0,56
+gas_ccgt present 2;0,58
+gas_ccgt new;0,6
+gas_ccgt ccs;0,51
+gas_ocgt old;0,35
+gas_ocgt new;0,42
+gas_ocgt old_bio;0,35
+hydrogen_ccgt new;0,6

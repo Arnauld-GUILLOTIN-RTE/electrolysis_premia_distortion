@@ -23,7 +23,7 @@ This project is solely intended to reproduce figures of said data provided code 
 ## <a name="reproduction-execution"></a>Reproduction & Execution
 
 ### <a name="prerequisites"></a><a name="prerequisites"></a>Prerequisites
-- R version 4.4.2 (as used in paper reproduction)
+- R version 4.4.2 was used for paper reproduction
 - `renv` managed environment with all dependencies (run `renv::restore()` in `main.R`). The `renv.lock` file and `renv` folder of the repository ensure packages used match those with which the code runs as intended
 - Unzipped Antares simulation folders, at the root of `data/simulations/` (download from associated [Zenodo record](https://zenodo.org/records/20022572)). The structure of the folder should be, for a given simulation, e.g., `data/simulations/NT2040_0/`
 - Note: Input parameters in `data/input/` and `src/config.R` match model inputs and should not be changed to reproduce paper figures
